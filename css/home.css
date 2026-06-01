@@ -275,32 +275,32 @@ div.menu a:hover span{
 }
 
 
-.home-page div.menu a[href="index.html"] span{
+.home-page div.menu a[href="https://github.com/Sajid-arch/Mohammed-Sajidul-Alam.git"] span{
     color: var(--btn-bg-clr);
     background: var(--btn-bg-light-clr);
     border-radius: 5px;
 }
-.about-page div.menu a[href="about.html"] span{
+.about-page div.menu a[href="https://github.com/Sajid-arch/Mohammed-Sajidul-Alam-About.git"] span{
     color: var(--btn-bg-clr);
     background: var(--btn-bg-light-clr);
     border-radius: 5px;
 }
-.services-page div.menu a[href="services.html"] span{
+.services-page div.menu a[href="https://github.com/Sajid-arch/Mohammed-Sajidul-Alam-Services.git"] span{
     color: var(--btn-bg-clr);
     background: var(--btn-bg-light-clr);
     border-radius: 5px;
 }
-.blog-page div.menu a[href="blog.html"] span{
+.blog-page div.menu a[href="https://github.com/Sajid-arch/Mohammed-Sajidul-Alam-Blog.git"] span{
     color: var(--btn-bg-clr);
     background: var(--btn-bg-light-clr);
     border-radius: 5px;
 }
-.projects-page div.menu a[href="projects.html"] span{
+.projects-page div.menu a[href="https://github.com/Sajid-arch/Mohammed-Sajidul-Alam-Projects.git"] span{
     color: var(--btn-bg-clr);
     background: var(--btn-bg-light-clr);
     border-radius: 5px;
 }
-.contact-page div.menu a[href="contact.html"] span{
+.contact-page div.menu a[href="https://github.com/Sajid-arch/Mohammed-Sajidul-Alam-Contact.git"] span{
     color: var(--btn-bg-clr);
     background: var(--btn-bg-light-clr);
     border-radius: 5px;
