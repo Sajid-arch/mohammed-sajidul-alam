@@ -104,6 +104,7 @@ body {
 div.loader-container{
     top: 0;
     left: 0;
+    
     background: #ffffff;
     z-index: 9999;
     transition: opacity 0.5s ease;
@@ -405,9 +406,7 @@ div.shadow:hover{
     cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'><line x1='3' y1='3' x2='21' y2='21' stroke='white' stroke-width='2' stroke-linecap='round'/><line x1='21' y1='3' x2='3' y2='21' stroke='white' stroke-width='2' stroke-linecap='round'/></svg>") 12 12, crosshair;
 }
 
-/* div.shadow:hover{
-    cursor: url("Images/Cross\ 16.png")12 12,crosshair;
-} */
+
 
 div.sidebar div.icons a{
     width: 2.5rem;
@@ -542,14 +541,20 @@ div.sidebar div.ci-text h4{
     font-weight: 500;
 }
 
-input[type="radio"]{
-    display: none;
+
+
+.shadow-close-btn {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    overflow: hidden;
 }
 
 #A:checked ~ label.shadow-close-btn div.shadow {
     opacity: 1;
     pointer-events: auto;  /* Enable interaction */
-    position: fixed;
     top: 0;
     left: 0;
     z-index: 1100;
@@ -611,7 +616,6 @@ section.hero {
 section.hero::before{
     content: "";
     position: absolute;
-    top: -25px;
     left: 0;
     bottom: 0;
     right: 0;
@@ -1551,11 +1555,6 @@ section.EdEx div.container div.row div.ed-info-wrap:nth-child(4){
 
    }
 
-    
-
-
-
-
    div.contact{
     background-color: var(--content-bg);
     height: 100%;
@@ -1563,18 +1562,15 @@ section.EdEx div.container div.row div.ed-info-wrap:nth-child(4){
    }
 
 
-
-
-
-   .contact:hover::after{
+   div.contact:hover::after{
     opacity: 1;
 }
-.contact:hover::before{
+div.contact:hover::before{
     opacity: 0;
 }
 
-.contact::before, 
-.contact::after{
+div.contact::before, 
+div.contact::after{
     content: "";
     position: absolute;
     top: 0;
@@ -1586,20 +1582,10 @@ section.EdEx div.container div.row div.ed-info-wrap:nth-child(4){
 
 
 }
-
-.contact::before{
-    background: radial-gradient(550px circle at 75% 130% , var(--btn-bg-clr), transparent 40%);
-    z-index: 1;
-    opacity: 1;
-}
-
-
-
-
     
 
 
-.contact > .contact-content{
+div.contact > div.contact-content{
     height: calc(100% - 6px);
     width: calc(100% - 6px);
     background: var(--progressbar-bg);
@@ -1609,7 +1595,7 @@ section.EdEx div.container div.row div.ed-info-wrap:nth-child(4){
     padding: 2rem;
 }
 
-.contact::after{
+div.contact::after{
     background: radial-gradient(1800px circle at var(--mouse-x) var(--mouse-y) , var(--btn-bg-clr), transparent 40%);
     z-index: 1;
     opacity: 0;
