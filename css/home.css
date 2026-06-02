@@ -1735,7 +1735,7 @@ div.contact-form form input:focus, div.contact-form form textarea:focus{
 
    footer.container-fluid{
     background-color: var(--progressbar-bg);
-    padding: 6rem 0 0;
+    padding: 6rem 0 1rem;
    }
 
    footer.container-fluid div.container{
