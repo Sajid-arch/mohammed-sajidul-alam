@@ -1,0 +1,167 @@
+/* Header Style Start  */
+header{
+    height: auto;
+    z-index: 1000;
+    background: var(--invisible);
+    transition: all ease 0.5s;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+header.transparent{
+    background: var(--invisible);
+}
+header.solid{
+    background: var(--progressbar-bg);
+}
+
+.hidden{
+    top: -12.5vh;
+    opacity: 0;
+}
+.visible{
+    top: 0;
+    opacity: 1;
+}
+
+header div.container{
+    flex-wrap: wrap;
+}
+
+header div.container div.logo{
+    padding: 0.5rem 1.5rem 0.8rem 0;
+}
+
+
+
+
+div.menu a{
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--header-font-clr);
+    margin-right: 1rem;
+    cursor: pointer;
+}
+
+div.menu a span{
+    transition: all ease 0.5s;
+    display: inline-block;
+    padding: 0.1rem 0.5rem;
+}
+
+
+
+
+div.menu a:hover span{
+    transform: translate(-4px,-4px);
+    text-shadow: 15px 15px 20px var(--box-shadow-clr);
+}
+
+
+.home-page div.menu a[href="https://sajid-arch.github.io/Mohammed-Sajidul-Alam/"] span{
+    color: var(--btn-bg-clr);
+    background: var(--btn-bg-light-clr);
+    border-radius: 5px;
+}
+.about-page div.menu a[href="https://sajid-arch.github.io/Mohammed-Sajidul-Alam-About/"] span{
+    color: var(--btn-bg-clr);
+    background: var(--btn-bg-light-clr);
+    border-radius: 5px;
+}
+.services-page div.menu a[href="https://sajid-arch.github.io/Mohammed-Sajidul-Alam-Services/"] span{
+    color: var(--btn-bg-clr);
+    background: var(--btn-bg-light-clr);
+    border-radius: 5px;
+}
+.blog-page div.menu a[href="https://sajid-arch.github.io/Mohammed-Sajidul-Alam-Blog/"] span{
+    color: var(--btn-bg-clr);
+    background: var(--btn-bg-light-clr);
+    border-radius: 5px;
+}
+.blog-1 div.menu a[href="https://sajid-arch.github.io/Mohammed-Sajidul-Alam-Blog-Blog-1/"] span{
+    color: var(--btn-bg-clr);
+    background: var(--btn-bg-light-clr);
+    border-radius: 5px;
+}
+.blog-2 div.menu a[href="https://sajid-arch.github.io/Mohammed-Sajidul-Alam-Blog-Blog-2/"] span{
+    color: var(--btn-bg-clr);
+    background: var(--btn-bg-light-clr);
+    border-radius: 5px;
+}
+.blog-3 div.menu a[href="https://sajid-arch.github.io/Mohammed-Sajidul-Alam-Blog-Blog-3/"] span{
+    color: var(--btn-bg-clr);
+    background: var(--btn-bg-light-clr);
+    border-radius: 5px;
+}
+.projects-page div.menu a[href="https://sajid-arch.github.io/Mohammed-Sajidul-Alam-Projects/"] span{
+    color: var(--btn-bg-clr);
+    background: var(--btn-bg-light-clr);
+    border-radius: 5px;
+}
+.contact-page div.menu a[href="https://sajid-arch.github.io/Mohammed-Sajidul-Alam-Contact/"] span{
+    color: var(--btn-bg-clr);
+    background: var(--btn-bg-light-clr);
+    border-radius: 5px;
+}
+
+
+header div.container div.labels label{
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all ease 0.5s;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    border: var(--label-border) solid var(--btn-bg-clr);
+}
+header div.container div.labels label::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: var(--btn-bg-clr);
+    z-index: 2;
+    transition: all ease 0.5s;
+    transform: scale(1);
+    border-radius: 50%;
+    height: 100%;
+    width: 100%;
+}
+header div.container div.labels label i{
+    color: var(--text-clr);
+    z-index: 3;
+    font-size: 1.2rem;
+}
+
+
+
+header div.container div.labels label i.fa-bars{
+    display: none;
+}
+
+header div.container div.labels label:hover::after{
+    transform: scale(0);
+}
+header div.container div.labels label:hover i{
+    color: var(--btn-bg-clr);
+    transition: all ease 0.5s;
+}
+header div.container div.labels label:hover i.fa-bars-staggered{
+    display: none;
+}
+header div.container div.labels label:hover i.fa-bars{
+    display: block;
+}
+header div.container div.labels div.icons{
+    display: flex;
+    align-items: center;
+    width: auto;
+}

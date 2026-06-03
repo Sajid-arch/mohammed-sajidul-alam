@@ -1,0 +1,99 @@
+/* Footer Section Style Start  */
+
+
+   footer.container-fluid{
+    background-color: var(--progressbar-bg);
+    padding: 6rem 0 1rem;
+   }
+
+
+
+
+   footer.container-fluid div.container div.d-flex h2{
+    font-size: 3.1rem;
+    font-weight: 400;
+    color: var(--header-font-clr);
+    line-height: 3.9rem;
+    max-width: 80%;    
+   }
+
+
+   footer.container-fluid div.container div.d-flex h2 span{
+    font-weight: 700;
+   }
+
+   footer.container-fluid div.container div.d-flex form{
+    border-bottom: 1px solid var(--border);
+    width: auto;
+    max-width: 65%;
+   }
+
+
+   footer.container-fluid div.container div.d-flex form input{
+    
+    background: var(--invisible);
+   }
+
+   footer.container-fluid div.container div.fql h4{
+    font-weight: 700;
+    font-size: 1.5rem;
+    line-height: 1.9rem;
+   }
+   footer.container-fluid div.container div.fql div.menu a{
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.9rem;
+   }
+
+   footer.container-fluid div.container div.contact-info h4{
+    font-weight: 700;
+    font-size: 1.5rem;
+    line-height: 1.9rem;
+   }
+
+   footer.container-fluid div.container div.contact-info div.ci h4{
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.9rem;
+   }
+
+   footer.container-fluid div.container div.contact-info div.ci a{
+    width: 2.5rem;
+    height: 2.5rem;
+    background: var(--invisible);
+    border: 2px solid var(--border);
+   }
+
+
+   footer.container-fluid div.container div.contact-info div.ci a i{
+    color: var(--header-font-clr);
+    font-size: 1.2rem;
+   }
+
+   footer.container-fluid div.f-2{
+    border-top: 1px solid var(--border);
+    padding: 1.5rem 0;
+   }
+
+   footer.container-fluid div.f-2 p{
+    color:var(--description-clr);
+    font-size: 0.9rem;
+    text-align: center;
+    font-weight: 400;
+    
+   }
+   footer.container-fluid div.f-2 p span{
+    color:var(--header-font-clr);
+    font-weight: 700;
+   }
+
+   footer.container-fluid div.f-2 div.d-flex a{
+    font-size: 0.9rem;
+    color: var(--header-font-clr);
+    font-weight: 400;
+   }
+
+
+
+
+   /* Footer Section Style End  */
