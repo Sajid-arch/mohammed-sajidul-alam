@@ -192,6 +192,11 @@
    }
 
 
+    footer.container-fluid div.container{
+    padding: 0 0 4rem;
+   }
+
+
 
     
 }
