@@ -271,7 +271,7 @@ div.loader-container{
     --description-clr:rgb(162, 154, 143);
     --invisible: rgba(0,0,0,0);
     --transparent-bg-clr:rgba(0,0,0,0.05);
-    --content-bg:rgb(13, 13, 13);
+    --content-bg:rgb(20, 20, 20);
     --progressbar-bg:rgb(11, 11, 11);
     --border: rgb(38, 34, 31);
     --heading-section-clr:rgb(18, 18, 18);
