@@ -1,4 +1,37 @@
 /* Header Style Start  */
+/* Default: Light Mode */
+:root i.icon-dark { 
+    display: inline-block; 
+}
+:root i.icon-light { 
+    display: none; 
+}
+
+/* Dark Mode: Switch visibility */
+:root.dark-mode i.icon-light { 
+    display: inline-block; 
+}
+:root.dark-mode i.icon-dark { 
+    display: none; 
+}
+
+:root img.logo-dark { 
+    display: none; 
+}
+:root img.logo-light { 
+    display: inline-block; 
+}
+
+/* Dark Mode: Switch visibility */
+:root.dark-mode img.logo-light { 
+    display: none; 
+}
+:root.dark-mode img.logo-dark { 
+    display: inline-block; 
+}
+
+
+
 header{
     height: auto;
     z-index: 1000;
@@ -105,6 +138,43 @@ div.menu a:hover span{
     border-radius: 5px;
 }
 
+header div.container div.labels button{
+    background: var(--theme-btn-bg);
+    border-radius: 50%;
+    height: 2.5rem;
+    width: 2.5rem;
+    overflow: hidden;
+}
+header div.container div.labels button i.icon-dark{
+    color: var(--moon);
+    font-size: 1rem;
+    pointer-events: none;
+    transition: all ease 0.5s;
+}
+header div.container div.labels button i.icon-light{
+    color: var(--sun);
+    font-size: 1rem;
+    pointer-events: none;
+    transition: all ease 0.5s;
+}
+
+header div.container div.labels button:hover i{
+    animation: rise 1.5s;
+}
+
+@keyframes rise{
+    0%{
+        opacity: 0;
+    }
+    5%{
+        transform: translateY(1.2rem);
+    }
+
+    100%{
+        transform: translateY(0);
+    }
+}
+
 
 header div.container div.labels label{
     width: 2.5rem;
@@ -137,7 +207,7 @@ header div.container div.labels label::after{
     width: 100%;
 }
 header div.container div.labels label i{
-    color: var(--text-clr);
+    color: var(--icon-light-clr);
     z-index: 3;
     font-size: 1.2rem;
 }

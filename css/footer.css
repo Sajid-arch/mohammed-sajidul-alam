@@ -1,6 +1,22 @@
 /* Footer Section Style Start  */
 
 
+:root img.logo-dark { 
+    display: none; 
+}
+:root img.logo-light { 
+    display: inline-block; 
+}
+
+/* Dark Mode: Switch visibility */
+:root.dark-mode img.logo-light { 
+    display: none; 
+}
+:root.dark-mode img.logo-dark { 
+    display: inline-block; 
+}
+
+
    footer.container-fluid{
     background-color: var(--progressbar-bg);
     padding: 6rem 0 0;
@@ -29,15 +45,21 @@
    }
 
 
-   footer.container-fluid div.container div.d-flex form input{
-    
+   footer.container-fluid div.container div.d-flex form input{    
     background: var(--invisible);
+   }
+   footer.container-fluid div.container div.d-flex form button{    
+    background: var(--invisible);
+   }
+   footer.container-fluid div.container div.d-flex form button i{    
+    color: var(--header-font-clr);
    }
 
    footer.container-fluid div.container div.fql h4{
     font-weight: 700;
     font-size: 1.5rem;
     line-height: 1.9rem;
+    color: var(--header-font-clr);
    }
    footer.container-fluid div.container div.fql div.menu a{
     font-weight: 400;
@@ -49,6 +71,7 @@
     font-weight: 700;
     font-size: 1.5rem;
     line-height: 1.9rem;
+    color: var(--header-font-clr);
    }
 
    footer.container-fluid div.container div.contact-info div.ci h4{

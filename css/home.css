@@ -15,21 +15,25 @@
     html, body {
     overflow-x: clip;
     position: relative;
+    background: var(--text-clr);
+    
 }
 
 body {
     font-family: "Rajdhani", sans-serif!important;
 
+    display: flow-root;
+
 }
 
-/* Container styling for the abbreviation */
+
 .abbreviation-box {
   position: relative;
   cursor: pointer;
   text-decoration: underline dotted; /* Keeps the standard standard dotted underline */
 }
 
-/* The Tooltip Box */
+
 .abbreviation-box::after {
   content: attr(full-form); /* Pulls the text dynamically from HTML */
   position: absolute;
@@ -106,7 +110,7 @@ body {
     overflow: hidden;
 }
 .grow-i{
-    color: var(--header-font-clr);
+    color: var(--icon-dark-clr);
     font-size: 1rem;
     z-index: 3;
 }
@@ -127,7 +131,7 @@ body {
     transform: scale(1);
 }
 .grow:hover .grow-i{
-    color: var(--text-clr);
+    color: var(--icon-light-clr);
 }
 
 
@@ -139,7 +143,7 @@ div.loader-container{
     top: 0;
     left: 0;
     
-    background: #ffffff;
+    background: var(--text-clr);
     z-index: 9999;
     transition: opacity 0.5s ease;
     pointer-events: none;
@@ -229,7 +233,7 @@ div.loader-container{
     --about-bg-clr:rgb(67, 20, 23);
     --box-shadow-clr: rgba(0, 0, 0, 0.5);
     --heading-clr:rgba(237, 228, 228, 1);
-    --gradient-text: linear-gradient(60deg,rgba(237, 35, 81),rgba(203, 199, 199));
+    --gradient-text: linear-gradient(120deg,rgba(0, 0, 0,0),rgba(255, 0, 0, 0.5));
     --placeholder-text-clr:rgba(117, 117, 118);
     --transparent:#e7e7e7;
     --description-clr:#5d6570;
@@ -238,9 +242,47 @@ div.loader-container{
     --content-bg:#F2F2F2;
     --progressbar-bg:#f4f4f4;
     --border: #d9dde0;
+    --icon-dark-clr:rgba(20,20,20);
+    --icon-light-clr:rgba(255,255,255);
+    --bg-image: url("../Images/Background.png");
     --label-border: 2px;
     --loader-size: 78px;
     --loader-speed: 1.4s;
+    --moon:#F6F1D5;
+    --sun:#FFA500 ;
+    --theme-btn-bg:rgb(24, 24, 24);
+    transition: all ease 1s;
+}
+
+/* For Dark Mode  */
+:root.dark-mode {
+    --header-font-clr: rgba(235,235,235);
+    --text-clr: rgb(0, 0, 0);
+    --btn-bg-clr: rgba(255, 0, 0);
+    --btn-bg-light-clr: rgba(255, 0, 0, 0.25);
+    --hero-bg-clr: rgba(212, 239, 233);
+    --about-bg-clr:rgb(188, 235, 232);
+    --box-shadow-clr: rgba(255, 255, 255, 0.5);
+    --heading-clr:rgba(18, 27, 27, 1);
+    --gradient-text: linear-gradient(120deg,rgba(0, 0, 0,0),rgba(255, 0, 0, 0.5));
+    --placeholder-text-clr:rgba(138, 138, 137);
+    --transparent:rgb(24, 24, 24);
+    --description-clr:rgb(162, 154, 143);
+    --invisible: rgba(0,0,0,0);
+    --transparent-bg-clr:rgba(0,0,0,0.05);
+    --content-bg:rgb(13, 13, 13);
+    --progressbar-bg:rgb(11, 11, 11);
+    --border: rgb(38, 34, 31);
+    --icon-dark-clr:rgba(255,255,255);
+    --icon-light-clr:rgba(255,255,255);
+    --bg-image: url("../Images/Background-Dark.png");
+    --label-border: 2px;
+    --loader-size: 78px;
+    --loader-speed: 1.4s;
+    --moon:#F6F1D5;
+    --sun:#FFA500 ;
+    --theme-btn-bg:#e7e7e7;
+    transition: all ease 1s;
 }
 
 
@@ -265,7 +307,7 @@ section.hero::before{
     left: 0;
     bottom: 0;
     right: 0;
-    background: url("../Images/Background.png");
+    background: var(--bg-image);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -274,6 +316,7 @@ section.hero::before{
     height: 100%;
     width: 100%;
 }
+
 
 
 .cursor {
@@ -597,7 +640,7 @@ div.something:hover::after{
    }
 
    section.skill-bar div.container div.row div.ex-num-wrap{
-    background-color: var(--transparent-bg-clr);
+    background: var(--gradient-text);
     padding: 1rem 3.25rem 2.75rem;
     border-radius: 1.25rem;
     height: 100%;
@@ -977,7 +1020,11 @@ section.EdEx div.container div.ed-wrap{
     gap: 6rem;
 }
 
-section.EdEx div.container div.row div.ed-wrap div.ed-info-wrap div.ed-info div.ed-info-content h4.pb-3{
+div.ed-info-content h4.pb-3{
+    font-weight: 600;
+    color: var(--header-font-clr);
+}
+div.ed-info-content h5{
     font-weight: 600;
     color: var(--header-font-clr);
 }
@@ -1024,7 +1071,7 @@ section.EdEx div.container div.row div.ed-info-wrap:nth-child(4){
    }
 
    section.lp div.container div.row div.col-12 div.p-img-wrapper{
-    border: 2px solid var(--border);
+    border: 2px solid var(--btn-bg-light-clr);
     background: var(--progressbar-bg);
    }
 
@@ -1091,7 +1138,6 @@ section.mskill div.container div.d-flex div.mskill-card.active div p{
    div.mskill-indicator{
     position: absolute;
     left: 0;
-    bottom: 0;
     right: 0;
     background: var(--btn-bg-clr);
     top: var(--top, 0px);
@@ -1163,7 +1209,7 @@ section.mskill div.container div.d-flex div.mskill-card.active div p{
     font-weight: 700;
     color: var(--header-font-clr);
    }
-   section.comment-sec div.container div.comment div.comment-text h3{
+   section.comment-sec div.container div.comment div.quote h3{
     font-weight: 700;
     color: var(--header-font-clr);
    }
@@ -1319,7 +1365,12 @@ div.contact-form form input:focus, div.contact-form form textarea:focus{
     font-weight: 400;
    }
 
-   div.tag i{
+   div.tag ul li{
+    color: var(--header-font-clr);
+    font-size: 0.9rem;
+   }
+
+   div.tag ul li i{
     font-size: 0.7rem;
    }
 
@@ -1364,176 +1415,3 @@ div.contact-form form input:focus, div.contact-form form textarea:focus{
    /* Blog Section Style End  */
 
 
-   /* Layout Setup */
-.card-container {
-  display: flex;
-  gap: 20px;
-  padding: 40px;
-  background-color: #111;
-  font-family: sans-serif;
-}
-
-/* The Box base styles */
-.card {
-  position: relative; /* Crucial: anchors the absolute background */
-  flex: 1;
-  padding: 30px;
-  border: 1px solid #333;
-  border-radius: 12px;
-  overflow: hidden; /* Keeps the scaling background inside the borders */
-  color: #fff;
-  cursor: pointer;
-}
-
-/* Ensure content stays on top of the moving background */
-.card .content {
-  position: relative;
-  z-index: 2;
-}
-
-/* 1. The Hidden Background Box */
-.card .hover-bg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  z-index: 1;
-  
-  /* Start shrunk down and invisible */
-  opacity: 0;
-  transform: scale(0.6);
-  
-  /* Smooth transition configuration */
-  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), 
-              opacity 0.3s ease;
-}
-
-/* 2. The Hover State: Grow to cover the full box */
-.card:hover .hover-bg {
-  opacity: 1;
-  transform: scale(1);
-}
-
-/* Optional: Slight border tweak on hover */
-.card:hover {
-  border-color: #667eea;
-  transition: border-color 0.3s ease;
-}
-
-.tabs-container {
-  display: flex;
-  position: relative; /* Anchor for the sliding pill */
-  background-color: #1e1e24;
-  padding: 10px;
-  border-radius: 16px;
-  width: 600px; /* Fixed container width */
-}
-
-div.box-2{
-    width: 900px;
-}
-
-.tab-box {
- 
-  height: 120px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  z-index: 2; /* Sits on top of the sliding background */
-  color: #a0a0a5;
-  font-family: sans-serif;
-  font-weight: bold;
-  transition: color 0.3s ease;
-}
-
-/* Light up the text when the background slides under it */
-.tab-box:hover {
-  color: #ffffff;
-}
-
-/* 1. The Physical Colored Box */
-.sliding-pill {
-  position: absolute;
-  top: 10px;
-  bottom: 10px;
-  /* Width must match exactly ONE box's width */
-  width: calc((100% - 20px) / 3); 
-  background: linear-gradient(135deg, #ff007f, #7f00ff);
-  border-radius: 12px;
-  z-index: 1;
-  
-  /* This handles the travel animation */
-  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
-  
-  /* Default position (under Box 1) */
-  transform: translateX(0);
-  pointer-events: none; /* Prevents the pill from blocking hover states */
-}
-
-/* 2. Tracking the Hover and Moving the Pill */
-
-/* If Box 1 is hovered, stay at 0 */
-.tabs-container:has(.box-1:hover) .sliding-pill {
-  transform: translateX(0);
-}
-
-/* If Box 2 is hovered, shift right by 100% of the pill's width */
-.tabs-container:has(.box-2:hover) .sliding-pill {
-  transform: translateX(100%);
-}
-
-/* If Box 3 is hovered, shift right by 200% of the pill's width */
-.tabs-container:has(.box-3:hover) .sliding-pill {
-  transform: translateX(200%);
-}
-.nav-container {
-  display: flex;
-  position: relative;
-  background-color: #1a1a1a;
-  padding: 8px;
-  border-radius: 12px;
-  width: max-content; /* Container automatically shrinks/grows to fit contents */
-  gap: 4px;
-}
-
-.nav-box {
-  padding: 14px 24px;
-  color: #888;
-  font-family: system-ui, sans-serif;
-  font-weight: 500;
-  cursor: pointer;
-  z-index: 2; /* Sits securely on top of the moving background */
-  white-space: nowrap; /* Prevents text from awkwardly wrapping to a new line */
-  transition: color 0.3s ease;
-}
-
-/* Light up the text color when hovered or active */
-.nav-box:hover, 
-.nav-box.active {
-  color: #fff;
-}
-
-/* 1. The Physical Traveling Box */
-.sliding-indicator {
-  position: absolute;
-  top: 8px;
-  bottom: 8px;
-  
-  /* Read dimensions directly from JavaScript variables */
-  top: var(--top, 0px);
-  height: var(--height, 0px);
-  
-  background: linear-gradient(135deg, #ff007f, #7f00ff);
-  border-radius: 8px;
-  z-index: 1;
-  
-  /* Creates the smooth physical sliding & stretching animation */
-  transition: left 0.35s cubic-bezier(0.25, 1, 0.5, 1), 
-              width 0.35s cubic-bezier(0.25, 1, 0.5, 1);
-}
-
-
-   

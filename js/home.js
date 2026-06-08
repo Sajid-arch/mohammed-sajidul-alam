@@ -15,6 +15,8 @@ window.addEventListener('load', function() {
 // Loader Code End 
 
 
+
+
 // Fetching Header and Footer Code Start 
 
 
@@ -94,6 +96,7 @@ function initHeaderScroll() {
 
 
 // Header Hide on Scroll Code Start 
+
 
 
 
@@ -349,39 +352,77 @@ const handleOnMouseMoveEd = e => {
 // My Skill Section Code Start
 
 const mSkillContainer = document.querySelector('.mskill-container');
-const mSkillCard = document.querySelectorAll('.mskill-card');
+const mSkillCards = document.querySelectorAll('.mskill-card');
 const mSkillIndicator = document.querySelector('.mskill-indicator');
 
-function moveIndicator(element) {
-  // Get the exact position and width of the targeted box
-  const cardTop = element.offsetTop;
-  const cardHeight = element.offsetHeight;
+// Track which card should be the permanent "home base"
+let defaultActiveCard = document.querySelector('.mskill-card.active') || mSkillCards[0];
 
-  // Assign these exact pixel values directly to the CSS variables
-  mSkillContainer.style.setProperty('--top', `${cardTop}px`);
+function moveIndicator(element) {
+  if (!element || !mSkillContainer) return;
+
+  const containerRect = mSkillContainer.getBoundingClientRect();
+  const cardRect = element.getBoundingClientRect();
+
+  const relativeTop = cardRect.top - containerRect.top;
+  const cardHeight = cardRect.height;
+
+  mSkillContainer.style.setProperty('--top', `${relativeTop}px`);
   mSkillContainer.style.setProperty('--height', `${cardHeight}px`);
 }
 
-// 1. Initialize the position on the default "active" item when page loads
-const activeBox = document.querySelector('.mskill-card.active');
-if (activeBox) {
-  moveIndicator(activeBox);
+// 1. Initialize setup on load
+function initIndicator() {
+  if (defaultActiveCard) {
+    // Ensure our home-base card explicitly has the active class applied
+    mSkillCards.forEach(card => card.classList.remove('active'));
+    defaultActiveCard.classList.add('active');
+    moveIndicator(defaultActiveCard);
+  }
 }
 
+if (document.readyState === 'complete') {
+  initIndicator();
+} else {
+  window.addEventListener('load', initIndicator);
+}
+
+// Auto-adjust layout on window resize or mobile orientation flip
+const resizeObserver = new ResizeObserver(() => {
+  const currentActive = document.querySelector('.mskill-card.active');
+  if (currentActive) moveIndicator(currentActive);
+});
+resizeObserver.observe(mSkillContainer);
+
 // 2. Track hover movements
-// 2. Track hover movements and dynamically update the active class
-mSkillCard.forEach(box => {
+mSkillCards.forEach(box => {
   box.addEventListener('mouseenter', (e) => {
     const currentCard = e.currentTarget;
     
-    // Remove the 'active' class from whichever card currently has it
-    document.querySelector('.mskill-card.active')?.classList.remove('active');
-    
-    // Add the 'active' class to the newly hovered card
+    // Switch the active class visual style to the currently hovered card
+    mSkillCards.forEach(card => card.classList.remove('active'));
     currentCard.classList.add('active');
     
-    // Move the background pill
     moveIndicator(currentCard);
+  });
+});
+
+// 3. Snap back to the original home base card when the mouse leaves the container
+mSkillContainer.addEventListener('mouseleave', () => {
+  // Clear out active statuses from hovered items
+  mSkillCards.forEach(card => card.classList.remove('active'));
+  
+  // Re-apply active status back to our original default card
+  defaultActiveCard.classList.add('active');
+  
+  // Slide the indicator box back home
+  moveIndicator(defaultActiveCard);
+});
+
+// Optional: If you want a card to become the NEW permanent home base when clicked
+mSkillCards.forEach(box => {
+  box.addEventListener('click', (e) => {
+    defaultActiveCard = e.currentTarget;
   });
 });
 
@@ -434,6 +475,7 @@ const swiper = new Swiper('.swiper', {
         contact.onmousemove = e => handleOnMouseMoveContact(e);
     }
 
+    // Contact Section Moving Border Effect End
 
 
 

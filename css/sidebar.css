@@ -1,12 +1,28 @@
 /* Sidebar Style  */
 
+
+:root img.logo-dark { 
+    display: none; 
+}
+:root img.logo-light { 
+    display: inline-block; 
+}
+
+/* Dark Mode: Switch visibility */
+:root.dark-mode img.logo-light { 
+    display: none; 
+}
+:root.dark-mode img.logo-dark { 
+    display: inline-block; 
+}
+
 div.sidebar{
     top: 0;
     left: -100%;
     position: fixed;
     z-index: 1100;
     background-color: var(--text-clr);
-    transition: ease-in 0.05s , ease-out 1s;
+    transition: all ease 0.5s;
     padding: 1.5rem;
     
 }
@@ -43,7 +59,7 @@ div.sidebar div.icons a{
 }
 
 div.sidebar div.icons a i{
-    color: var(--header-font-clr);
+    color: var(--icon-dark-clr);
     font-size: 1rem;
     z-index: 3;
 }
@@ -65,7 +81,7 @@ div.sidebar div.icons a:hover::after{
     transform: scale(1);
 }
 div.sidebar div.icons a:hover i{
-    color: var(--text-clr);
+    color: var(--icon-light-clr);
 }
 div.sidebar div.sidebar-head label{
     width: 2.5rem;
