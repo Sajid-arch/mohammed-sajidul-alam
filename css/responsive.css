@@ -108,6 +108,15 @@
     gap: 2rem;
 }
 
+div.contact-text h3{
+    font-size: 2rem;
+}
+
+   footer.container-fluid div.container div.d-flex h2{
+    font-size: 1.6rem;
+    line-height: 1.9rem;   
+   }
+
 }
 
 
@@ -294,6 +303,15 @@
 
    }
 
+       div.contact-text h3{
+    font-size: 2.5rem;
+}
+
+   footer.container-fluid div.container div.d-flex h2{
+    font-size: 2.6rem;
+    line-height: 3rem;
+}
+
 
 
 }
@@ -433,6 +451,15 @@
    }
    section.comment-sec div.container div.comment div.comment-text i{
     font-size: 6rem;
+   }
+
+       div.contact-text h3{
+    font-size: 3rem;
+}
+
+   footer.container-fluid div.container div.d-flex h2{
+    font-size: 3.1rem;
+    line-height: 3.9rem; 
    }
 
 

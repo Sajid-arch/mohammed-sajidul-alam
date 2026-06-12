@@ -27,10 +27,8 @@
 
 
    footer.container-fluid div.container div.d-flex h2{
-    font-size: 3.1rem;
     font-weight: 400;
     color: var(--header-font-clr);
-    line-height: 3.9rem;
     max-width: 80%;    
    }
 
